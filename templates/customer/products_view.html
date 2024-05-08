@@ -1,0 +1,156 @@
+
+ <!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FISH  - Home</title>
+	<link rel="icon" href="{% static 'img/Fevicon.png' %}" type="image/png">
+  <link rel="stylesheet" href="{% static 'vendors/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/fontawesome/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/themify-icons/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/nice-select/nice-select.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <!--================ Start Header Menu Area =================-->
+	<header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand logo_h" href=""><img src="{% static 'img/home/fishgrid.jpg' %}" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+              <li class="nav-item active"><a class="nav-link" href="/customer">HOME</a></li>
+
+
+              <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">CATEGORY</a>
+                <ul class="dropdown-menu">
+					{% for d in category %}
+                  <li class="nav-item"><a class="nav-link" href="categ_view?catg_id={{d.id}}&id={{userid}}">{{d.name}}</a></li>
+					{% endfor %}
+<!--                  <li class="nav-item"><a class="nav-link" href="single-product.html">Fish Food </a></li>-->
+<!--                  <li class="nav-item"><a class="nav-link" href="checkout.html">Accessories</a></li>-->
+<!--                  <li class="nav-item"><a class="nav-link" href="confirmation.html">Aquarium</a></li>-->
+<!--                  <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>-->
+                </ul>
+							</li>
+<!--              <li class="nav-item submenu dropdown">-->
+<!--                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"-->
+<!--                  aria-expanded="false">Blog</a>-->
+<!--                <ul class="dropdown-menu">-->
+<!--                  <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>-->
+<!--                  <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>-->
+<!--                </ul>-->
+<!--			</li>-->
+<!--							<li class="nav-item submenu dropdown">-->
+<!--                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"-->
+<!--                  aria-expanded="false">BOOKING</a>-->
+<!--                <ul class="dropdown-menu">-->
+<!--                  <li class="nav-item"><a class="nav-link" href="booking">Booking History</a></li>-->
+<!--&lt;!&ndash;                  <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>&ndash;&gt;-->
+<!--                  <li class="nav-item"><a class="nav-link" href="tracking-order.html"></a></li>-->
+<!--                </ul>-->
+<!--              </li>-->
+<!--              <li class="nav-item"><a class="nav-link" href="">CONTACT</a></li>-->
+								</li>
+<!--              <li class="nav-item submenu dropdown">-->
+<!--                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"-->
+<!--                  aria-expanded="false">REGISTER</a>-->
+<!--                <ul class="dropdown-menu">-->
+<!--                  <li class="nav-item"><a class="nav-link" href="blog.html">SHOP REGISTER</a></li>-->
+<!--                  <li class="nav-item"><a class="nav-link" href="cous_reg">COUSTOMER REGISTER</a></li>-->
+<!--                </ul>-->
+<!--			</li>-->
+				<li class="nav-item"><a class="nav-link" href="viewCart?id={{shop_id}}">CART</a></li>
+				<li class="nav-item"><a class="nav-link" href="/">LOGOUT</a></li>
+
+
+
+
+            </ul>
+
+<!--            <ul class="nav-shop">-->
+<!--&lt;!&ndash;              <li class="nav-item"><button><i class="ti-search"></i></button></li>&ndash;&gt;-->
+<!--              <li class="nav-item"><button><i class="ti-shopping-cart" href="cart"></i><span class="nav-shop__circle">3</span></button> </li>-->
+<!--&lt;!&ndash;              <li class="nav-item"><a class="button button-header" href="#">Buy Now</a></li>&ndash;&gt;-->
+<!--            </ul>-->
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+    <!-- ================ trending product section start ================= -->  
+    <section class="section-margin calc-60px">
+      <div class="container">
+        <div class="section-intro pb-60px">
+          <p>Popular Item in the Shop</p>
+          <h2> <span class="section-intro__style">Product</span></h2>
+        </div>
+        <div class="row">
+            {% for dri in view_prodt  %}
+
+          <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="card text-center card-product">
+              <div class="card-product__img">
+                <img class="card-img" src="{{ dri.image.url}}" alt="">
+                <ul class="card-product__imgOverlay">
+<!--                  <li><button><i class="ti-search"></i></button></li>-->
+<!--                  <li><button><i class="ti-shopping-cart" ></i></button></li>-->
+<!--                  <li><button><i class="ti-heart"></i></button></li>-->
+                </ul>
+              </div>
+              <div class="card-body">
+                <p>{{dri.catg.name}}</p>
+                <h4 class="card-product__title"><a href="single_view?id={{ dri.id}}">{{dri.name}}</a></h4>
+                <p class="card-product__price">₹{{dri.price}}</p>
+              </div>
+            </div>
+          </div>
+             {% endfor %}
+
+      </div>
+      </div>
+    </section>
+    <!-- ================ trending product section end ================= -->
+<footer class="footer">
+
+
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row d-flex">
+					<p class="col-lg-12 footer-text text-center">
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--================ End footer Area  =================-->
+
+
+
+  <script src="{% static 'vendors/jquery/jquery-3.2.1.min.js' %}"></script>
+  <script src="{% static 'vendors/bootstrap/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendors/skrollr.min.js' %}"></script>
+  <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'vendors/nice-select/jquery.nice-select.min.js' %}"></script>
+  <script src="{% static 'vendors/jquery.ajaxchimp.min.js' %}"></script>
+  <script src="{% static 'vendors/mail-script.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

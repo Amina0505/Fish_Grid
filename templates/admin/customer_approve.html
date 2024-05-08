@@ -1,0 +1,49 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+{% block content %}
+            {% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+<br>
+<br>
+<br>
+ <h1 align="left" class="title-single">APPROVE/REJECT</h1>
+
+
+
+   <table class="table table-bordered table-striped table-hover">
+
+
+<th class="info" style="background-color: lightblue;">Customer Name</th>
+<th class="info" style="background-color: lightblue;">Address</th>
+<th class="info" style="background-color: lightblue;">Email</th>
+<th class="info" style="background-color: lightblue;">Approve</th>
+<th class="info" style="background-color: lightblue;">Reject</th>
+{% for dri in custr  %}
+
+<tr>
+
+        <td>{{ dri.user.first_name}}</td>
+
+    <td>{{ dri.address}}</td>
+
+    <td>{{ dri.user.email}}</td>
+
+    <td><a href="approve?id={{ dri.user_id}}" class=" btn btn-success">Approve</a></td>
+    <td><a href="reject?id={{ dri.user_id}}" class=" btn btn-danger">Reject</a></td>
+
+</tr>
+
+    {% endfor %}
+</table>
+</div>
+            </div>
+                   </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,76 @@
+
+ {% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+        {% if message %}
+<script>
+alert("{{ message }}")
+</script>
+    {% endif %}
+    
+   <main class="site-main">
+
+    <!--================ Hero banner start =================-->
+    <section class="hero-banner">
+      <div class="container">
+        <div class="row no-gutters align-items-center pt-60px">
+          <div class="col-5 d-none d-sm-block">
+            <div class="hero-banner__img">
+              <img class="img-fluid" src=" {% static 'img/home/fish1.png' %} " alt="">
+            </div>
+          </div>
+          <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
+            <div class="hero-banner__content">
+              <h4>Create Your Account</h4>
+<!--              <h1>Shop Our Premium Product</h1>-->
+              <h1>We deliver all Live Fishes & Products in all over Kerala</h1>
+<!--              <a class="button button-hero" href="#">Browse Now</a>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--================ Hero banner start =================-->
+
+    <!--================ Hero Carousel start =================-->
+    <section class="section-margin mt-0">
+      <div class="owl-carousel owl-theme hero-carousel">
+        <div class="hero-carousel__slide">
+          <img src="{% static 'img/home/12.gif' %}" alt=width="500" height="600" class="img-fluid">
+          <a href="#" class="hero-carousel__slideOverlay">
+            <h3>Back Water Aquatics</h3>
+            <p>Excellent Aquariums in Kerala</p>
+          </a>
+        </div>
+        <div class="hero-carousel__slide">
+          <img src="{% static 'img/home/123.gif' %}" alt=width="500" height="600" class="img-fluid">
+          <a href="#" class="hero-carousel__slideOverlay">
+            <h3>Back Water Aquatics</h3>
+            <p>Excellent Aquariums in Kerala</p>
+          </a>
+        </div>
+        <div class="hero-carousel__slide">
+          <img src=" {% static 'img/home/15.gif' %}" alt="" class="img-fluid">
+          <a href="#" class="hero-carousel__slideOverlay">
+            <h3>Back Water Aquatics</h3>
+            <p>Excellent Aquariums in Kerala</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!--================ Hero Carousel end =================-->
+
+
+    <!-- ================ Subscribe section end ================= --> 
+
+    
+
+  </main>
+
+
+ {% endblock %}
+  <!--================ Start footer Area  =================-->	

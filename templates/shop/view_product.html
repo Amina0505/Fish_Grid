@@ -1,0 +1,82 @@
+{% extends 'shop/shop_base.html' %}
+{% load static %}
+{% block content %}
+
+
+<br>
+<br>
+<br>
+ <h1 align="left" class="title-single">MY PRODUCT </h1>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+ <div class="col-sm-12 section-t8" align="center">
+          <div class="row">
+            <div class="col-md-7">
+              <div style=" border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;width: 1200px;
+    margin-top: -150px;">
+
+   <table class="table table-bordered table-striped table-hover" >
+
+<th class="info" style="background-color: lightblue;">PRODUCT NAME</th>
+       <th class="info" style="background-color: lightblue;">CATEGORY</th>
+
+<th class="info" style="background-color: lightblue;">IMAGE</th>
+<th class="info" style="background-color: lightblue;">PRICE</th>
+       <th class="info" style="background-color: lightblue;">DESCRIPTION</th>
+              <th class="info" style="background-color: lightblue;">STOCK</th>
+
+              <th class="info" style="background-color: lightblue;">DELETE</th>
+
+
+
+
+
+
+{% for dri in view_pr  %}
+
+<tr>
+    <td>{{ dri.name}}</td>
+        <td>{{ dri.catg.name}}</td>
+
+    <td><img style="max-width: 200px;max-height:140px;" src="/media/{{ dri.image }}"></td>
+    <td>{{ dri.price }}</td>
+    <td>{{ dri.desc }}</td>
+        <td>{{ dri.stock }}</td>
+
+
+
+
+
+<!--     <form action="#" method="post">-->
+<!--        {% csrf_token %}-->
+<!--<td><a href="products?id={{dri.user_id}}" class=" btn btn-success">Update</td>-->
+<!--</form>-->
+
+        <td><button style="background-color:lightslategray"><a href="delete?id={{ dri.id}}" class=" btn btn-danger" style="color:black">Delete</a></button></td>
+
+
+</tr>
+
+    {% endfor %}
+</table>
+</div>
+            </div>
+          </div>
+ </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    {% endblock %}

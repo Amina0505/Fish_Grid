@@ -1,0 +1,62 @@
+
+{% extends 'shop/shop_base.html' %}
+{% load static %}
+{% block content %}
+<!--<section class="blog-banner-area" id="category">-->
+<!--		<div class="container h-100">-->
+<!--&lt;!&ndash;			<div class="blog-banner">&ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;					<h1>Add</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;					<nav aria-label="breadcrumb" class="banner-breadcrumb">&ndash;&gt;-->
+<!--&lt;!&ndash;            <ol class="breadcrumb">&ndash;&gt;-->
+<!--&lt;!&ndash;              <li class="breadcrumb-item"><a href="#">Home</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;              <li class="breadcrumb-item active" aria-current="page">Login</li>&ndash;&gt;-->
+<!--&lt;!&ndash;            </ol>&ndash;&gt;-->
+<!--&lt;!&ndash;          </nav>&ndash;&gt;-->
+<!--&lt;!&ndash;				</div>&ndash;&gt;-->
+<!--&lt;!&ndash;			</div>&ndash;&gt;-->
+<!--    </div>-->
+<!--	</section>-->
+	<!-- ================ end banner area ================= -->
+
+  <!--================Login Box Area =================-->
+	<section class="login_box_area section-margin">
+		<div class="container">
+<!--			<div class="row">-->
+<!--				<div class="col-lg-6">-->
+<!--					<div class="login_box_img">-->
+<!--&lt;!&ndash;						<div class="hover">&ndash;&gt;-->
+<!--&lt;!&ndash;							<h4>New to our website?</h4>&ndash;&gt;-->
+<!--&lt;!&ndash;							<p>There are advances being made in science and technology everyday, and a good example of this is the</p>&ndash;&gt;-->
+<!--&lt;!&ndash;							<a class="button button-account" href="cus_register.html">Create an Account</a>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--					</div>-->
+<!--				</div>-->
+				<div class="col-lg-6">
+					<div class="login_form_inner">
+						<h3>Add Category</h3>
+						<form method='post'   class="row login_form" action="#/" id="contactForm" >
+							{% csrf_token %}
+							<div class="col-md-12 form-group">
+								<input type="text" class="form-control" id="category" name="name" placeholder="Category Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Category Name'" autocomplete="off">
+							</div>
+<!--							<div class="col-md-12 form-group">-->
+<!--								<input type="password" class="form-control" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">-->
+<!--							</div>-->
+<!--							<div class="col-md-12 form-group">-->
+<!--								<div class="creat_account">-->
+<!--									<input type="checkbox" id="f-option2" name="selector">-->
+<!--									<label for="f-option2">Keep me logged in</label>-->
+<!--								</div>-->
+<!--							</div>-->
+							<div class="col-md-12 form-group">
+								<button type="submit" value="submit" class="button button-login w-100">Create</button>
+<!--								<a href="#">Forgot Password?</a>-->
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+ {% endblock %}

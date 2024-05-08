@@ -1,0 +1,94 @@
+
+{% extends 'customer/customer_base.html' %}
+{% load static %}
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+
+<section>
+<br>
+<div class="col-md-6">
+          <div class="tile">
+            <h3 class="tile-title">My Profile</h3>
+            <div class="tile-body">
+              <form method="post" >
+                   {% csrf_token %}
+                <div class="form-group row">
+                  <label class="control-label col-md-3">Name</label>
+                  <div class="col-md-8">
+                    <input class="form-control" type="text" value="{{ view_cust.user.first_name }}" placeholder=" " name="name">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="control-label col-md-3">Email</label>
+                  <div class="col-md-8">
+                    <input class="form-control col-md-8" type="email" value="{{ view_cust.user.email }}" placeholder="" name="email">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="control-label col-md-3">Address</label>
+                  <div class="col-md-8">
+                    <input class="form-control col-md-8" value="{{ view_cust.address }}" placeholder="" name="address">
+                  </div>
+                </div>
+
+            </div>
+            <div class="tile-footer">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-3">
+                  <input type="hidden" class="form-control mb-20" value="{{ view_cust.user.id }}" name="id" required autocomplete="off">
+
+                  <button class="btn btn-primary" value="pf" name="profile" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Edit</button>
+                </div>
+              </div>
+            </div>
+              </form>
+          </div>
+        </div>
+</section>
+<section>
+<br>
+<div class="col-md-6">
+          <div class="tile">
+            <h3 class="tile-title">Reset Password</h3>
+            <div class="tile-body">
+              <form method="post">
+                   {% csrf_token %}
+                <div class="form-group row">
+                  <label class="control-label col-md-3">Password </label>
+                  <div class="col-md-8">
+                    <input class="form-control" type="text" value="" name="password" placeholder="">
+                  </div>
+                </div>
+
+
+            </div>
+            <div class="tile-footer">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-3">
+                  <input type="hidden" class="form-control mb-20" value="{{ view_cust.user.id }}" name="id" required autocomplete="off">
+
+                  <button class="btn btn-primary" value="pass" name="profile" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Edit</button>
+                </div>
+              </div>
+            </div>
+              </form>
+          </div>
+        </div>
+</section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+ {% endblock %}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FISH  - Home</title>
+	<link rel="icon" href="{% static 'img/Fevicon.png' %}" type="image/png">
+  <link rel="stylesheet" href="{% static 'vendors/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/fontawesome/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/themify-icons/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/nice-select/nice-select.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <!--================ Start Header Menu Area =================-->
+	<header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand logo_h" href=""><img src="{% static 'img/home/fishgrid.jpg' %}" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+              <li class="nav-item active"><a class="nav-link" href="/customer">HOME</a></li>
+
+
+                <li class="nav-item"><a class="nav-link" href="viewCart">CART</a></li>
+
+				<li class="nav-item"><a class="nav-link" href="/">LOGOUT</a></li>
+
+
+
+            </ul>
+
+<!--            <ul class="nav-shop">-->
+<!--&lt;!&ndash;              <li class="nav-item"><button><i class="ti-search"></i></button></li>&ndash;&gt;-->
+<!--              <li class="nav-item"><button><i class="ti-shopping-cart" href="cart"></i><span class="nav-shop__circle">3</span></button> </li>-->
+<!--&lt;!&ndash;              <li class="nav-item"><a class="button button-header" href="#">Buy Now</a></li>&ndash;&gt;-->
+<!--            </ul>-->
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+	<!--================ End Header Menu Area =================-->
+
+	<!-- ================ start banner area ================= -->	
+	<section class="blog-banner-area" id="category">
+		<div class="container h-100">
+			<div class="blog-banner">
+				<div class="text-center">
+					<h1>Shopping Cart</h1>
+					<nav aria-label="breadcrumb" class="banner-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+            </ol>
+          </nav>
+				</div>
+			</div>
+    </div>
+	</section>
+	<!-- ================ end banner area ================= -->
+  
+  
+
+  <!--================Cart Area =================-->
+  <section class="cart_area">
+      <div class="container">
+          <div class="cart_inner">
+              <div class="table-responsive">
+                  <table class="table">
+                      <thead>
+                          <tr>
+                              <th scope="col">Product Image& Image</th>
+                                <th scope="col">Price</th>
+                              <th scope="col">Quantity</th>
+                              <th scope="col">Total</th>
+
+
+
+
+<!--                              <th scope="col">Quantity</th>-->
+                              <th scope="col">Action</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+ {% for dri in ct  %}
+                          <tr>
+
+                              <td>
+
+                                  <div class="media">
+
+                                      <div class="d-flex">
+                                          <img style="max-width: 200px;max-height:140px;" src="{{ dri.product.image.url}}" alt="">
+                                      </div>
+                                      <div class="media-body">
+                                          <p>{{dri.product.name}}</p>
+                                      </div>
+
+                                  </div>
+
+                              </td>
+                                  <td>
+
+                                  <h5>₹{{dri.product.price}}</h5>
+                              </td>
+                                     <td>
+
+                                  <h5>₹{{dri.quantity}}</h5>
+                              </td>
+
+                              <td>
+
+                                  <h5>₹{{dri.total}}</h5>
+                              </td>
+
+<!--                              </td>-->
+
+<!--                                      <td class="quantity-box"><input type="number" size="4" value="1" min="1" step="1" class="c-input-text qty text"></td>-->
+
+
+<!--                              <td>-->
+                                                                     <td>
+                              <button type="button" style="color: red;"><a href="removecart?id={{ dri.id}}"  >Remove</a></button>
+
+                              </td>
+                                  <td class="border-bottom-0">
+						      	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
+				          	</button>
+				        	</td>
+
+                          </tr>
+ {% endfor %}
+                          <tr class="bottom_button">
+                              <td>
+<!--                                  <a class="button" href="#">Update Cart</a>-->
+                              </td>
+                              <td>
+
+                              </td>
+                              <td>
+
+                              </td>
+<!--                              <td>-->
+<!--                                  <div class="cupon_text d-flex align-items-center">-->
+<!--                                      <input type="text" placeholder="Coupon Code">-->
+<!--                                      <a class="primary-btn" href="#">Apply</a>-->
+<!--                                      <a class="button" href="#">Have a Coupon?</a>-->
+<!--                                  </div>-->
+<!--                              </td>-->
+                          </tr>
+                          <tr>
+                              <td></td>
+                              <td>
+                                 <h5>Subtotal</h5>
+                              </td>
+                              <td>
+                                    <h5>   ₹{{ asz }}</h5>
+                              </td>
+                              <td>
+
+                              </td>
+                              <td>
+
+                              </td>
+                          </tr>
+
+                          <tr class="out_button_area">
+                              <td class="d-none-l">
+
+                              </td>
+                              <td class="">
+
+                              </td>
+                              <td>
+
+                              </td>
+                              <td>
+                                  <div class="checkout_btn_inner d-flex align-items-center">
+<!--                                      <a class="gray_btn" href="#">Continue Shopping</a>-->
+                                      <a class="primary-btn ml-2" href="checkout">Proceed to checkout</a>
+                                  </div>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!--================End Cart Area =================-->
+
+
+
+  <!--================ Start footer Area  =================-->	
+	<footer>
+
+
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row d-flex">
+					<p class="col-lg-12 footer-text text-center">
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--================ End footer Area  =================-->
+
+
+
+  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendors/skrollr.min.js"></script>
+  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script src="vendors/jquery.ajaxchimp.min.js"></script>
+  <script src="vendors/mail-script.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

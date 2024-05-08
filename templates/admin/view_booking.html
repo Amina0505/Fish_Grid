@@ -1,0 +1,76 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+{% block content %}
+
+
+<br>
+<br>
+<br>
+ <h1 align="left" class="title-single">BOOKINGS </h1>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+ <div class="col-sm-12 section-t8">
+          <div class="row">
+            <div class="col-md-7">
+              <div style=" border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;width: 1200px;
+    margin-top: -150px;">
+
+   <table class="table table-bordered table-striped table-hover">
+<th class="info" style="background-color: lightblue;">USER NAME</th>
+
+<th class="info" style="background-color: lightblue;">PRODUCT NAME</th>
+       <th class="info" style="background-color: lightblue;">PRODUCT IMAGE</th>
+
+<th class="info" style="background-color: lightblue;">PRICE</th>
+
+
+
+
+
+
+{% for dri in view_b  %}
+
+<tr>
+<!--    <td>{{ dri.user}}</td>-->
+    <td>{{ dri.user.first_name}}</td>
+    <td>{{ dri.product.name }}</td>
+    <td><img style="max-width: 200px;max-height:140px;" src="/media/{{ dri.product.image }}"></td>
+    <td>{{ dri.product.price }}</td>
+
+
+<!--      <form action="#" method="post">-->
+<!--        {% csrf_token %}-->
+
+<!--    <td><textarea name="action" placeholder="reply" > </textarea>-->
+<!--          <input type="hidden" name="id" value="{{ dri.id }}"><button type="submit">Send</button></td>-->
+<!--&lt;!&ndash;     <form action="#" method="post">&ndash;&gt;-->
+<!--        {% csrf_token %}-->
+<!--<td><a href="products?id={{dri.user_id}}" class=" btn btn-success">PRODUCTS</td>-->
+<!--</form>-->
+<!--{#    <td><a href="reject?id={{ dri.user_id}}" class=" btn btn-danger">Remove</a></td>#}-->
+
+</tr>
+
+    {% endfor %}
+</table>
+</div>
+            </div>
+          </div>
+ </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    {% endblock %}

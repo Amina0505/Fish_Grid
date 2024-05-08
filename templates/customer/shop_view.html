@@ -1,0 +1,41 @@
+ {% extends 'customer/customer_base.html' %}
+{% load static %}
+{% block content %}
+    <!-- ================ trending product section start ================= -->  
+    <section class="section-margin calc-60px">
+      <div class="container">
+        <div class="section-intro pb-60px">
+          <p></p>
+          <h2> <span class="section-intro__style">Shops</span></h2>
+        </div>
+        <div class="row">
+            {% for dri in view_shop  %}
+
+          <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="card text-center card-product">
+              <div class="card-product__img">
+                <img class="card-img" src="{{ dri.image.url}}" alt="">
+                <ul class="card-product__imgOverlay">
+<!--                  <li><button><i class="ti-search"></i></button></li>-->
+<!--                  <li><button><i class="ti-shopping-cart" ></i></button></li>-->
+<!--                  <li><button><i class="ti-heart"></i></button></li>-->
+                </ul>
+              </div>
+              <div class="card-body">
+                <h4 class="card-product__title"><a href="products?id={{dri.user_id}}">{{ dri.user.first_name}}</a></h4>
+                <p class="card-product__price">{{ dri.address}}</p>
+                                  <p>{{ dri.phonenumber }}</p>
+
+              </div>
+            </div>
+          </div>
+             {% endfor %}
+
+      </div>
+      </div>
+    </section>
+ <br>
+ <br>
+ <br>
+ <br>
+ {% endblock %}
